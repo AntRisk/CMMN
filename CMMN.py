@@ -141,7 +141,10 @@ class TimeIntervalLSTMCell(RNNCell):
         base_config = super(TimeIntervalLSTMCell, self).get_config()
         return dict(list(base_config.items()) + list(config.items()))
 
-def model_feabeh_timelstm3_fa_lstm_ta(X_1, LEN, KEEP_PROB, scope='rnn'):
+
+def CMMN(X_1, LEN, KEEP_PROB, scope='rnn'):
+    """The raw implementation of CMMN without the embedded input
+    """
     max_time = MAX_TIME
     num_units = NUM_UNITS
     with tf.variable_scope(scope + "1"):
@@ -205,7 +208,7 @@ if __name__ == "__main__":
     LEN = tf.placeholder(dtype=tf.float32, shape=[None])
     KEEP_PROB = tf.placeholder(dtype=tf.float32)
 
-    out = model_feabeh_timelstm3_fa_lstm_ta(X, LEN, KEEP_PROB)
+    out = CMMN(X, LEN, KEEP_PROB)
     with tf.Session() as sess:
         sess.run(tf.global_variables_initializer())
         res = sess.run(out, feed_dict={X: data, LEN: [3, 3, 3, 3], KEEP_PROB: 1.0})
