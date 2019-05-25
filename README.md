@@ -11,4 +11,4 @@ In this study, we propose a novel end-to-end event sequence learning model - Tim
 <img src="./figs/architecture.jpg" width = "400" height = "260" align=center>
 
 #### The Prototype of Timeinterval-LSTM
-<img src="./figs/time_interval_lstm.jpg" width = "400" height = "260" align=center>
+<img src="./figs/time_interval_lstm.jpg" width = "400" height = "300" align=center>
